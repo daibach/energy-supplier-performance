@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends DEFAULT_Controller {
+class Welcome extends ESP_Controller {
 
   public function index()
   {

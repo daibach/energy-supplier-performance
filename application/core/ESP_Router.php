@@ -1,6 +1,6 @@
 <?php
 
-class DEFAULT_Router extends CI_Router {
+class ESP_Router extends CI_Router {
     function set_class($class)
     {
         //$this->class = $class;

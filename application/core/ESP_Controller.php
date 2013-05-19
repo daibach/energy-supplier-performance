@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 //application/libraries/MY_Controller.php
 
-class DEFAULT_Controller extends CI_Controller {
+class ESP_Controller extends CI_Controller {
 
   function __construct() {
     parent::__construct();
