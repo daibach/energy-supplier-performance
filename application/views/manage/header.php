@@ -58,7 +58,7 @@
             <div class="nav-collapse collapse">
               <ul class="nav">
                 <li <?php if(!isset($page_section) || $page_section=='account') : ?>class="active"<?php endif; ?>><a href="<?php echo site_url('manage/account/dashboard'); ?>">Dashboard</a></li>
-                <li <?php if( isset($page_section) && $page_section=='users') : ?>class="active"<?php endif;?>><a href="<?php echo site_url('manage/users'); ?>">Manage Users</a></li>
+                <li <?php if( isset($page_section) && $page_section=='users') : ?>class="active"<?php endif;?>><a href="<?php echo site_url('manage/users'); ?>">Manage users</a></li>
                 <li class="divider-vertical"></li>
                 <li <?php if( isset($page_section) && $page_section=='password') : ?>class="active"<?php endif;?>><a href="<?php echo site_url('manage/account/change-password'); ?>">Change Password</a></li>
                 <li><a href="<?php echo site_url('manage/login/logout'); ?>">Log Out</a></li>
