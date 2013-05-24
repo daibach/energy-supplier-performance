@@ -24,7 +24,8 @@ class Performance_data_model extends CI_Model {
     $this->db->select('performance_data.id as row_id, performance_data.month1, performance_data.month2,
       performance_data.month3, performance_data.period_average, energy_suppliers.id as supplier_id,
       energy_suppliers.supplier_name, energy_suppliers.supplier_short_name,
-      energy_suppliers.supplier_slug, energy_suppliers.supplier_annotation');
+      energy_suppliers.supplier_slug, energy_suppliers.supplier_annotation,
+      performance_data.ranking');
     $this->db->where('period',$period_id);
     if($exclude_average) {
       $this->db->where('supplier_slug !=','big-six-average');
@@ -43,12 +44,26 @@ class Performance_data_model extends CI_Model {
     }
   }
 
-  function update_supplier($period,$supplier,$month1,$month2,$month3) {
+  function average_for_period($period_id) {
+    $this->db->select('performance_data.*');
+    $this->db->where('period',$period_id);
+    $this->db->where('supplier_slug','big-six-average');
+    $this->db->join('energy_suppliers','energy_suppliers.id=performance_data.supplier');
+    $query = $this->db->get('performance_data',1);
+    if($query->num_rows() > 0) {
+      return $query->row();
+    } else {
+      return FALSE;
+    }
+  }
+
+  function update_supplier($period,$supplier,$month1,$month2,$month3,$ranking=null) {
     $data = array(
       'month1' => $month1,
       'month2' => $month2,
       'month3' => $month3,
-      'period_average' => (($month1+$month2+$month3)/3)
+      'period_average' => (($month1+$month2+$month3)/3),
+      'ranking' => $ranking
     );
     $this->db->where('period',$period);
     $this->db->where('supplier',$supplier);
@@ -62,6 +77,25 @@ class Performance_data_model extends CI_Model {
     } else {
       return FALSE;
     }
+  }
+
+  function generate_rankings_for_period($period) {
+    $period_data = $this->all_for_period($period,true,true);
+
+    $last_complaints = 0;
+    $ranking_count = 0;
+
+    foreach($period_data as $key => $supplier) {
+      if($supplier->period_average != $last_complaints) {
+        $last_complaints = $supplier->period_average;
+        $ranking_count++;
+      }
+      $data = array('ranking'=>$ranking_count);
+      $this->db->where('period',$period);
+      $this->db->where('supplier',$supplier->supplier_id);
+      $this->db->update('performance_data',$data);
+    }
+    return TRUE;
   }
 
   function _find_supplier_from_slug($slug) {

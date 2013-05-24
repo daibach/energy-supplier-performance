@@ -157,6 +157,7 @@ class Performance extends ESP_Controller {
               $month2_average = $month2_cumulative/$num_of_suppliers;
               $month3_average = $month3_cumulative/$num_of_suppliers;
               $this->period_data->update_average($period->id,$month1_average,$month2_average,$month3_average);
+              $this->period_data->generate_rankings_for_period($id);
             } 
 
             $this->session->set_flashdata('success',"Period $period->period_year/Q$period->period_quarter data has been updated.");
