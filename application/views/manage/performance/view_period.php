@@ -50,6 +50,7 @@
             <th>Month 1</th>
             <th>Month 2</th>
             <th>Month 3</th>
+            <th>Period Average</th>
           </tr>
         </thead>
         <tbody>
@@ -59,6 +60,7 @@
               <td><?php echo $supplier->month1; ?></td>
               <td><?php echo $supplier->month2; ?></td>
               <td><?php echo $supplier->month3; ?></td>
+              <td><?php echo $supplier->period_average; ?></td>
             </tr>
           <?php endforeach; ?>
         </tbody>
