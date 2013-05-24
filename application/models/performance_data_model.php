@@ -23,7 +23,8 @@ class Performance_data_model extends CI_Model {
   function all_for_period($period_id,$exclude_average=false,$order_by_rating=false) {
     $this->db->select('performance_data.id as row_id, performance_data.month1, performance_data.month2,
       performance_data.month3, performance_data.period_average, energy_suppliers.id as supplier_id,
-      energy_suppliers.supplier_name, energy_suppliers.supplier_short_name, energy_suppliers.supplier_slug');
+      energy_suppliers.supplier_name, energy_suppliers.supplier_short_name,
+      energy_suppliers.supplier_slug, energy_suppliers.supplier_annotation');
     $this->db->where('period',$period_id);
     if($exclude_average) {
       $this->db->where('supplier_slug !=','big-six-average');
