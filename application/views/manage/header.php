@@ -43,7 +43,7 @@
     <?php endif; ?>
 
   </head>
-  <body class="login">
+  <body<?php if(!$this->session->userdata('admin_userid')) : ?> class="login"<?php endif; ?>>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
