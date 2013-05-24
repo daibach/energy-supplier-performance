@@ -5,6 +5,7 @@
 <p>The following administration tools are available to you:</p>
 <ul>
   <li><a href="<?php echo site_url('manage/users'); ?>">Manage admin accounts</a></li>
+  <li><a href="<?php echo site_url('manage/performance'); ?>">Manage supplier performance</a></li>
 </ul>
 
 <p>You can also:</p>
