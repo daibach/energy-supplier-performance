@@ -1,0 +1,4 @@
+body { }
+footer { border-top: #e5e5e5 1px solid; padding: 10px 0; font-size: 0.9em;}
+table th span.supplier-includes { font-size: 0.9em; font-weight: normal; }
+.table tbody tr.info>th { background-color: #d9edf7; }

@@ -76,6 +76,14 @@ class Performance_periods_model extends CI_Model {
     return $this->db->delete('performance_periods');
   }
 
+  function latest($include_unpublished=FALSE) {
+    if (! $include_unpublished) {
+      $this->db->where('published','yes');
+    }
+    $this->db->order_by('period_year desc, period_quarter desc');
+    return $this->_get_single_row();
+  }
+
   function find_by_id($id) {
     $this->db->where('id',$id);
     return $this->_get_single_row();
