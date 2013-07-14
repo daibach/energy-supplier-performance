@@ -2,10 +2,15 @@
 
 class Welcome extends ESP_Controller {
 
-  public function index()
-  {
+  function __construct() {
+    parent::__construct();
     $this->load->model('Performance_periods_model','periods');
     $this->load->model('Performance_data_model','period_data');
+    $this->load->model('Suppliers_model','suppliers');
+  }
+
+  public function index()
+  {
 
     $latest_period = $this->periods->latest();
 
