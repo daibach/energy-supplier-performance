@@ -5,7 +5,7 @@
 <div class="row-fluid">
   <div class="span6">
 
-    <div id="graph"><img src="http://placehold.it/560x400" /></div>
+    <div id="graph"></div>
 
   </div>
   <div class="span6">
