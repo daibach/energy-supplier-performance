@@ -28,7 +28,7 @@
           </th>
           <td><?php echo $supplier->period_average; ?></td>
           <?php if(! is_null($supplier->ranking)) : ?>
-            <td><?php echo add_ordinal_suffix($supplier->ranking); ?></td>
+            <td class="ranking"><span class="badge badge-<?php echo ranking_css_class($supplier->ranking); ?>"><?php echo add_ordinal_suffix($supplier->ranking); ?></span></td>
           <?php else : ?>
             <td>&nbsp;</td>
           <?php endif; ?>
