@@ -1,8 +1,8 @@
 
 <?php if($is_industry_average) : ?>
-  <h2>Industry Average Performance Figures (Big Six Suppliers)</h2>
+  <h2>Industry average complaint handling figures</h2>
 <?php else : ?>
-  <h2>Performance Figures for <?php echo $supplier->supplier_name; ?></h2>
+  <h2>Complaint handling figures for <?php echo $supplier->supplier_name; ?></h2>
   <p>Current ranking: <span class="badge badge-<?php echo ranking_css_class($ranking); ?>"><?php echo add_ordinal_suffix($ranking); ?></span> of 6</p>
 <?php endif; ?>
 <hr/>

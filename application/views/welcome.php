@@ -1,6 +1,6 @@
 
 
-<h2>Complaint Figures for <?php echo $period->period_year.", ".format_quarter_name($period->period_quarter); ?></h2>
+<h2>Complaint handling figures for <?php echo $period->period_year.", ".format_quarter_name($period->period_quarter); ?></h2>
 
 <div class="row-fluid">
   <div class="span6">

@@ -1,6 +1,6 @@
-<h2>Energy Suppliers</h2>
+<h2>Energy suppliers</h2>
 
-<p>Select a supplier to view their performance data:</p>
+<p>Select a supplier to view their complaint handling data:</p>
 
 <ul>
   <?php foreach($suppliers as $supplier) : ?>

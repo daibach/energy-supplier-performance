@@ -1,4 +1,4 @@
-<h2>Historical supplier performance figures</h2>
+<h2>Historical supplier complaint handling figures</h2>
 
 <hr/>
 

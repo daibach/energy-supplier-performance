@@ -46,7 +46,7 @@
   <body>
 
     <div class="container">
-      <h1><a href="http://www.consumerfutures.org.uk">Consumer Futures</a></br/><span>Energy Supplier Performance</span></h1>
+      <h1><a href="http://www.consumerfutures.org.uk">Consumer Futures</a></br/><span>Energy Supplier Complaint Handling</span></h1>
 
       <div class="navbar">
         <div class="navbar-inner">
