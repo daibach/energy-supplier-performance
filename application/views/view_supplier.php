@@ -46,11 +46,11 @@
   </div>
   <div class="span3">
     <div class="well">
-      <h4>Download this data</h4>
+      <!--<h4>Download this data</h4>
       <ul>
         <li><a href="#">CSV</a></li>
         <li><a href="#">JSON</a></li>
-      </ul>
+      </ul>-->
       <p class="ogl"><a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2"><img alt="OGL" src="/img/open-government-licence.png"></a>This data is published under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2">Open Government Licence v2.0</a>.</p>
     </div>
   </div>
