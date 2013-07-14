@@ -42,4 +42,8 @@ class ESP_Controller extends CI_Controller {
     }
   }
 
+  function _data_unavailable() {
+    echo('data is currently unavailable');
+  }
+
 }

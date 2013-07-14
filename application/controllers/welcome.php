@@ -34,7 +34,7 @@ class Welcome extends ESP_Controller {
       $this->load->view('template/footer');
 
     } else {
-      echo('There is no data to display');
+      $this->_data_unavailable();
     }
   }
 }
