@@ -116,7 +116,7 @@ class Migration_Create_performance_data extends CI_Migration {
       ),
       array(
         'supplier_name' => 'EDF Energy',
-        'supplier_short_name' => 'EDF',
+        'supplier_short_name' => 'EDF Energy',
         'supplier_slug' => 'edf-energy',
         'supplier_importance' => 1
       ),
