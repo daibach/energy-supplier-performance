@@ -48,5 +48,20 @@ if ( ! function_exists('add_ordinal_suffix')) {
   }
 }
 
+if ( ! function_exists('ranking_css_class')) {
+  function ranking_css_class($ranking) {
+
+    switch ($ranking) {
+      case 1: return "success"; break;
+      case 2: return "info"; break;
+      case 3: return "info"; break;
+      case 4: return "warning"; break;
+      case 5: return "warning"; break;
+      case 6: return "important"; break;
+      default: return "other";
+    }
+
+  }
+}
 
 /* Location: ./application/helpers/performance_helper.php */
