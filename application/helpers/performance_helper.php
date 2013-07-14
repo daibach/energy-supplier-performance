@@ -33,6 +33,7 @@ if ( ! function_exists('format_quarter_name')) {
   }
 }
 
+if ( ! function_exists('add_ordinal_suffix')) {
 function add_ordinal_suffix($number) {
   if(is_numeric($number)) {
     $ends = array('th','st','nd','rd','th','th','th','th','th','th');
@@ -44,6 +45,7 @@ function add_ordinal_suffix($number) {
   } else {
     return $number;
   }
+}
 }
 
 
