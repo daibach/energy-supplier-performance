@@ -14,7 +14,7 @@
       <thead>
         <tr>
           <th>Supplier</th>
-          <th>Complaints per 100,000 customers</th>
+          <th>Weighted cases per 100,000 customers</th>
           <th>Ranking</th>
         </tr>
       </thead>
@@ -36,5 +36,7 @@
         <?php endforeach; ?>
       </tbody>
     </table>
+
+    <p>View this quarter's data in <a href="<?php echo site_url(array('historical',"$period->period_year-q$period->period_quarter")); ?>">more detail</a>.</p>
   </div>
 </div>
