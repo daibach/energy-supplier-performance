@@ -2,3 +2,9 @@ body { }
 footer { border-top: #e5e5e5 1px solid; padding: 10px 0; font-size: 0.9em;}
 table th span.supplier-includes { font-size: 0.9em; font-weight: normal; }
 .table tbody tr.info>th { background-color: #d9edf7; }
+
+h1 { padding: 0 0 0.5em 0;}
+h1 a { color: #006c78; }
+h1 span { font-size: 0.9em; }
+
+#graph { min-height: 400px; }

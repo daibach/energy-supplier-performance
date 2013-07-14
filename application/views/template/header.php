@@ -46,13 +46,15 @@
   <body>
 
     <div class="container">
-      <h1>Energy Supplier Performance</h1>
+      <h1><a href="http://www.consumerfutures.org.uk">Consumer Futures</a></br/><span>Energy Supplier Performance</span></h1>
 
       <div class="navbar">
         <div class="navbar-inner">
           <ul class="nav">
-            <li class="active"><a href="#">Current Data</a></li>
-            <li><a href="#">Historical Data</a></li>
+            <li <?php if(isset($page_section) && $page_section=='latest') : ?>class="active"<?php endif; ?>><a href="<?php echo site_url(); ?>">Latest data</a></li>
+            <li <?php if(isset($page_section) && $page_section=='suppliers') : ?>class="active"<?php endif; ?>><a href="<?php echo site_url('suppliers'); ?>">Energy suppliers</a></li>
+            <li <?php if(isset($page_section) && $page_section=='historical') : ?>class="active"<?php endif; ?>><a href="<?php echo site_url('historical'); ?>">Historical data</a></li>
+            <li <?php if(isset($page_section) && $page_section=='about') : ?>class="active"<?php endif; ?>><a href="#">About the data</a></li>
           </ul>
         </div>
       </div>
