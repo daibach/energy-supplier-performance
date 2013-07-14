@@ -20,7 +20,7 @@ class Performance_data_model extends CI_Model {
       parent::__construct();
   }
 
-  function all_for_period($period_id,$exclude_average=false,$order_by_rating=false) {
+  function all_for_period($period_id,$exclude_average=false,$order_by='name') {
     $this->db->select('performance_data.id as row_id, performance_data.month1, performance_data.month2,
       performance_data.month3, performance_data.period_average, energy_suppliers.id as supplier_id,
       energy_suppliers.supplier_name, energy_suppliers.supplier_short_name,
@@ -31,10 +31,10 @@ class Performance_data_model extends CI_Model {
       $this->db->where('supplier_slug !=','big-six-average');
     }
     $this->db->join('energy_suppliers','energy_suppliers.id=performance_data.supplier');
-    if($order_by_rating) {
-      $this->db->order_by('period_average asc, supplier_name');
-    } else {
-      $this->db->order_by('supplier_importance desc, supplier_name');
+    switch($order_by) {
+      case 'average' : $this->db->order_by('period_average asc, supplier_name'); break;
+      case 'ranking' : $this->db->order_by('supplier_importance desc, ranking asc, supplier_name'); break;
+      default: $this->db->order_by('supplier_importance desc, supplier_name');
     }
     $query = $this->db->get('performance_data');
     if($query->num_rows() > 0) {
@@ -80,7 +80,7 @@ class Performance_data_model extends CI_Model {
   }
 
   function generate_rankings_for_period($period) {
-    $period_data = $this->all_for_period($period,true,true);
+    $period_data = $this->all_for_period($period,true,'big-six-average');
 
     $last_complaints = 0;
     $ranking_count = 0;
