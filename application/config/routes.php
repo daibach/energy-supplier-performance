@@ -43,6 +43,7 @@ $route['404_override'] = '';
 
 $route['supplier/average'] = "suppliers/view/average/true";
 $route['supplier/(:any)'] = "suppliers/view/$1";
+$route['historical/20([0-9]{2})-q([1-4]){1}'] = "historical/view_quarter/20$1/$2";
 
 
 /* End of file routes.php */
