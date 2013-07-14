@@ -20,7 +20,7 @@
       </thead>
       <tbody>
         <?php foreach($period_data as $supplier) : ?>
-        <tr<?php if($supplier->supplier_slug=='big-six-average'):?> class="info"<?php endif; ?>>
+        <tr<?php if($supplier->supplier_slug=='average'):?> class="info"<?php endif; ?>>
           <th><a href="<?php echo site_url(array('supplier',$supplier->supplier_slug)); ?>"><?php echo $supplier->supplier_name; ?></a>
             <?php if($supplier->supplier_annotation != '') : ?>
             <br/><span class="supplier-includes"><?php echo $supplier->supplier_annotation; ?></span>

@@ -139,9 +139,9 @@ class Migration_Create_performance_data extends CI_Migration {
         'supplier_importance' => 1
       ),
       array(
-        'supplier_name' => 'Industry Average (Big 6)',
-        'supplier_short_name' => 'Big 6 average',
-        'supplier_slug' => 'big-six-average',
+        'supplier_name' => 'Average',
+        'supplier_short_name' => 'Average',
+        'supplier_slug' => 'average',
         'supplier_importance' => 0
       )
     );
