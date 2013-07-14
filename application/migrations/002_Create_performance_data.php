@@ -84,15 +84,15 @@ class Migration_Create_performance_data extends CI_Migration {
       ),
       'month1' => array(
         'type'          => 'DECIMAL',
-        'constraint'    => '10,2'
+        'constraint'    => '10,1'
       ),
       'month2' => array(
         'type'          => 'DECIMAL',
-        'constraint'    => '10,2'
+        'constraint'    => '10,1'
       ),
       'month3' => array(
         'type'          => 'DECIMAL',
-        'constraint'    => '10,2'
+        'constraint'    => '10,1'
       )
     ));
     $this->dbforge->add_field('created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP');

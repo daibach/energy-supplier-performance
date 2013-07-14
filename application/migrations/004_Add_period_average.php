@@ -19,7 +19,7 @@ class Migration_Add_period_average extends CI_Migration {
     $fields = array(
       'period_average' => array(
         'type'          => 'DECIMAL',
-        'constraint'    => '10,2',
+        'constraint'    => '10,1',
         'default'       => '0'
       )
     );
