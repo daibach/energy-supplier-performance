@@ -31,6 +31,14 @@ class Embeds extends ESP_Controller {
     }
   }
 
+  public function consumer_futures_historical_data() {
+
+    $data = array();
+
+    $this->load->view('consumerfutures/historical_data',$data);
+
+  }
+
 }
 
 /* End of file embeds.php */
