@@ -30,6 +30,17 @@ class Performance_periods_model extends CI_Model {
     }
   }
 
+  function all_published() {
+    $this->db->order_by('period_year asc,period_quarter asc');
+    $this->db->where('published','yes');
+    $query = $this->db->get('performance_periods');
+    if($query->num_rows() > 0) {
+      return $query->result();
+    } else {
+      return false;
+    }
+  }
+
   function create($year,$quarter) {
     $data = array(
       'period_year' => $year,
