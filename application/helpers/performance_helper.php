@@ -33,6 +33,28 @@ if ( ! function_exists('format_quarter_name')) {
   }
 }
 
+if ( ! function_exists('identify_quarter_month')) {
+  function identify_quarter_month($quarter,$month,$format='long') {
+
+    switch($quarter) {
+      case 1 : $month_number = 0+$month; break;
+      case 2 : $month_number = 3+$month; break;
+      case 3 : $month_number = 6+$month; break;
+      case 4 : $month_number = 9+$month; break;
+      default: return "Unknown";
+    }
+
+    $month_date = mktime(0, 0, 0, $month_number, 10);
+
+    if($format=='long') {
+      return date("F", $month_date);
+    } else {
+      return date("M", $month_date);
+    }
+
+  }
+}
+
 if ( ! function_exists('add_ordinal_suffix')) {
   function add_ordinal_suffix($number) {
     if(is_numeric($number)) {

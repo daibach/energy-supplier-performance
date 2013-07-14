@@ -44,6 +44,30 @@ class Performance_data_model extends CI_Model {
     }
   }
 
+  function all_for_supplier($supplier_id,$include_unpublished=FALSE,$order_reversed=FALSE) {
+    $this->db->select('performance_data.id as row_id, performance_data.month1, performance_data.month2,
+      performance_data.month3, performance_data.period_average, performance_data.ranking,
+      performance_periods.id as period_id, performance_periods.period_year,
+      performance_periods.period_quarter');
+    $this->db->where('supplier',$supplier_id);
+    if(! $include_unpublished) {
+      $this->db->where('published','yes');
+    }
+    $this->db->join('performance_periods','performance_periods.id=performance_data.period');
+    if($order_reversed) {
+      $this->db->order_by('period_quarter asc');
+    } else {
+      $this->db->order_by('period_quarter desc');
+    }
+
+    $query = $this->db->get('performance_data');
+    if($query->num_rows() > 0) {
+      return $query->result();
+    } else {
+      return FALSE;
+    }
+  }
+
   function average_for_period($period_id) {
     $this->db->select('performance_data.*');
     $this->db->where('period',$period_id);
@@ -82,7 +106,7 @@ class Performance_data_model extends CI_Model {
   function generate_rankings_for_period($period) {
     $period_data = $this->all_for_period($period,true,'average');
 
-    $last_complaints = 0;
+    $last_complaints = -1;
     $ranking_count = 0;
 
     foreach($period_data as $key => $supplier) {

@@ -2,6 +2,8 @@ body { }
 footer { border-top: #e5e5e5 1px solid; padding: 10px 0; font-size: 0.9em;}
 table th span.supplier-includes { font-size: 0.9em; font-weight: normal; }
 .table tbody tr.info>th { background-color: #d9edf7; }
+.table tbody tr.success>th { background-color: #dff0d8; }
+.table tbody tr>td.ranking span.badge { font-size: 1.2em; padding: 4px 9px; }
 
 h1 { padding: 0 0 0.5em 0;}
 h1 a { color: #006c78; }

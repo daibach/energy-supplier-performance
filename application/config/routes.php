@@ -41,6 +41,8 @@
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 
+$route['supplier/average'] = "suppliers/view/average/true";
+$route['supplier/(:any)'] = "suppliers/view/$1";
 
 
 /* End of file routes.php */
