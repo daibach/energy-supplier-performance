@@ -16,7 +16,12 @@ class Welcome extends ESP_Controller {
 
     if($latest_period) {
 
-      $latest_period_data = $this->period_data->all_for_period($latest_period->id, false, true);
+      $latest_period_data = $this->period_data->all_for_period($latest_period->id, false, 'average');
+
+      $pagedata = array(
+        'page_section' => 'latest',
+        'page_scripts' => array(site_url('charts/current.js'))
+      );
 
       $data = array(
         'period' => $latest_period,
@@ -24,14 +29,13 @@ class Welcome extends ESP_Controller {
         'period_average' => $this->period_data->average_for_period($latest_period->id)
       );
 
-      $this->load->view('template/header');
+      $this->load->view('template/header',$pagedata);
       $this->load->view('welcome',$data);
       $this->load->view('template/footer');
 
     } else {
       echo('There is no data to display');
     }
-  
   }
 }
 
