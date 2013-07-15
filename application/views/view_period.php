@@ -14,8 +14,6 @@
         <tr>
           <th rowspan="2">Supplier</th>
           <th colspan="3">Weighted cases per 100,000 customers</th>
-          <th rowspan="2">Quarter Avg</th>
-          <th rowspan="2">Ranking</th>
         </tr>
         <tr>
           <th><?php echo identify_quarter_month($period->period_quarter,1,'short')." ".$period->period_year; ?></th>
@@ -27,22 +25,28 @@
         <?php foreach($period_data as $supplier) :?>
           <tr
             <?php if($supplier->supplier_slug=='average'):?> class="info"<?php endif; ?>
-            <?php if($supplier->ranking==1):?> class="success"<?php endif; ?>
+            <?php if($supplier->ranking_average==1):?> class="success"<?php endif; ?>
           >
             <th><a href="<?php echo site_url(array('supplier',$supplier->supplier_slug)); ?>"><?php echo $supplier->supplier_name; ?></a>
               <?php if($supplier->supplier_annotation != '') : ?>
                 <br/><span class="supplier-includes"><?php echo $supplier->supplier_annotation; ?></span>
               <?php endif; ?>
             </th>
-            <td><?php echo $supplier->month1; ?></td>
-            <td><?php echo $supplier->month2; ?></td>
-            <td><?php echo $supplier->month3; ?></td>
-            <td><?php echo $supplier->period_average; ?></td>
-            <?php if(! is_null($supplier->ranking)) : ?>
-              <td class="ranking"><span class="badge badge-<?php echo ranking_css_class($supplier->ranking); ?>"><?php echo add_ordinal_suffix($supplier->ranking); ?></span></td>
-            <?php else : ?>
-              <td>&nbsp;</td>
-            <?php endif; ?>
+            <td><?php echo $supplier->month1; ?>
+              <?php if(! is_null($supplier->month1_ranking)) : ?>
+              <br/><span class="badge badge-<?php echo ranking_css_class($supplier->month1_ranking); ?>"><?php echo add_ordinal_suffix($supplier->month1_ranking); ?></span>
+              <?php endif; ?>
+            </td>
+            <td><?php echo $supplier->month2; ?>
+              <?php if(! is_null($supplier->month2_ranking)) : ?>
+              <br/><span class="badge badge-<?php echo ranking_css_class($supplier->month2_ranking); ?>"><?php echo add_ordinal_suffix($supplier->month2_ranking); ?></span>
+              <?php endif; ?>
+            </td>
+            <td><?php echo $supplier->month3; ?>
+              <?php if(! is_null($supplier->month3_ranking)) : ?>
+              <br/><span class="badge badge-<?php echo ranking_css_class($supplier->month3_ranking); ?>"><?php echo add_ordinal_suffix($supplier->month3_ranking); ?></span>
+              <?php endif; ?>
+            </td>
           </tr>
         <?php endforeach; ?>
       </tbody>

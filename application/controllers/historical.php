@@ -36,7 +36,7 @@ class Historical extends ESP_Controller {
     $period = $this->periods->find_by_date($year,$quarter);
     if($period) {
 
-      $period_data = $this->period_data->all_for_period($period->id,false,'average');
+      $period_data = $this->period_data->all_for_period($period->id,false,'month3');
 
       $pagedata = array(
         'page_section' => 'historical',

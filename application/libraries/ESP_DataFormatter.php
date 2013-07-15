@@ -40,11 +40,14 @@ class ESP_DataFormatter {
             'supplier' => $period_supplier_data->supplier_name,
             'supplier_slug' => $period_supplier_data->supplier_slug,
             'value' => 0,
-            'ranking' => $period_supplier_data->ranking
+            'ranking' => 0
           );
           $m1['value'] = $period_supplier_data->month1;
           $m2['value'] = $period_supplier_data->month2;
           $m3['value'] = $period_supplier_data->month3;
+          $m1['ranking'] = $period_supplier_data->month1_ranking;
+          $m2['ranking'] = $period_supplier_data->month2_ranking;
+          $m3['ranking'] = $period_supplier_data->month3_ranking;
 
           $month1['data'][$period_supplier_data->supplier_id] = $m1;
           $month2['data'][$period_supplier_data->supplier_id] = $m2;

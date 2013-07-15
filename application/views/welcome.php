@@ -26,9 +26,9 @@
             <br/><span class="supplier-includes"><?php echo $supplier->supplier_annotation; ?></span>
           <?php endif; ?>
           </th>
-          <td><?php echo $supplier->period_average; ?></td>
-          <?php if(! is_null($supplier->ranking)) : ?>
-            <td class="ranking"><span class="badge badge-<?php echo ranking_css_class($supplier->ranking); ?>"><?php echo add_ordinal_suffix($supplier->ranking); ?></span></td>
+          <td><?php echo $supplier->month3; ?></td>
+          <?php if(! is_null($supplier->month3_ranking)) : ?>
+            <td class="ranking"><span class="badge badge-<?php echo ranking_css_class($supplier->month3_ranking); ?>"><?php echo add_ordinal_suffix($supplier->month3_ranking); ?></span></td>
           <?php else : ?>
             <td>&nbsp;</td>
           <?php endif; ?>

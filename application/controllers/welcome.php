@@ -16,7 +16,7 @@ class Welcome extends ESP_Controller {
 
     if($latest_period) {
 
-      $latest_period_data = $this->period_data->all_for_period($latest_period->id, false, 'average');
+      $latest_period_data = $this->period_data->all_for_period($latest_period->id, false, 'month3');
 
       $pagedata = array(
         'page_section' => 'latest',
