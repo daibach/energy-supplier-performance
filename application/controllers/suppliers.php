@@ -53,7 +53,7 @@ class Suppliers extends ESP_Controller {
         $data = array(
           'supplier' => $supplier,
           'period_data' => $period_data,
-          'ranking' => $period_data[0]->ranking,
+          'ranking' => $period_data[0]->month3_ranking,
           'is_industry_average' => $is_industry_average
         );
 

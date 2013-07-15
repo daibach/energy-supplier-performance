@@ -67,9 +67,9 @@
               <?php elseif($supplier->supplier_slug == 'british-gas') : ?><sup>2</sup>
               <?php endif; ?>
             </th>
-            <td><?php echo $supplier->period_average; ?></td>
-            <?php if(! is_null($supplier->ranking)) : ?>
-              <td class="ranking"><span class="badge"><?php echo add_ordinal_suffix($supplier->ranking); ?></span></td>
+            <td><?php echo $supplier->month3; ?></td>
+            <?php if(! is_null($supplier->month3_ranking)) : ?>
+              <td class="ranking"><span class="badge"><?php echo add_ordinal_suffix($supplier->month3_ranking); ?></span></td>
             <?php else : ?>
               <td>&nbsp;</td>
             <?php endif; ?>

@@ -9,7 +9,7 @@ function drawVisualization() {
   var data = google.visualization.arrayToDataTable([
     ['Supplier', 'Weighted cases per 100,000 customers', 'Average'],
     <?php foreach($period_data as $supplier) {
-      echo "['$supplier->supplier_short_name (".add_ordinal_suffix($supplier->ranking).")', $supplier->period_average, $period_average->period_average],";
+      echo "['$supplier->supplier_short_name (".add_ordinal_suffix($supplier->month3_ranking).")', $supplier->month3, $period_average->month3],";
     } ?>
   ]);
 
