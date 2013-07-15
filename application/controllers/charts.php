@@ -60,7 +60,7 @@ class Charts extends ESP_Controller {
       if($period_data) {
 
         $line_colour = '#006c78';
-        switch(ranking_css_class($period_data[sizeof($period_data)-1]->ranking)) {
+        switch(ranking_css_class($period_data[sizeof($period_data)-1]->month3_ranking)) {
           case 'success': $line_colour = '#468847'; break;
           case 'info': $line_colour = '#3a87ad'; break;
           case 'warning': $line_colour = '#f89406'; break;
@@ -97,7 +97,7 @@ class Charts extends ESP_Controller {
   function _generate_period_chart($period) {
     if($period) {
 
-      $period_data = $this->period_data->all_for_period($period->id, true, 'average');
+      $period_data = $this->period_data->all_for_period($period->id, true, 'month3');
 
       $data = array(
         'period' => $period,

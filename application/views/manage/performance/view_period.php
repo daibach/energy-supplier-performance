@@ -51,7 +51,7 @@
             <th>Month 2</th>
             <th>Month 3</th>
             <th>Period Average</th>
-            <th>Ranking</th>
+            <th>Ranking Average</th>
           </tr>
         </thead>
         <tbody>
@@ -62,7 +62,7 @@
               <td><?php echo $supplier->month2; ?></td>
               <td><?php echo $supplier->month3; ?></td>
               <td><?php echo $supplier->period_average; ?></td>
-              <td><?php echo add_ordinal_suffix($supplier->ranking); ?></td>
+              <td><?php echo add_ordinal_suffix($supplier->ranking_average); ?></td>
             </tr>
           <?php endforeach; ?>
         </tbody>

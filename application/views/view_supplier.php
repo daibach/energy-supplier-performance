@@ -18,7 +18,6 @@
           <th>Period</th>
           <th>Month</th>
           <th>Weighted cases per 100,000 customers</th>
-          <th>Quarter Avg</th>
           <?php if(!$is_industry_average) : ?><th>Ranking</th><?php endif; ?>
         </tr>
       </thead>
@@ -26,18 +25,19 @@
         <?php foreach($period_data as $period) : ?>
           <tr>
             <th rowspan="3"><a href="<?php echo site_url(array('historical',"$period->period_year-q$period->period_quarter")); ?>"><?php echo $period->period_year.' Q'.$period->period_quarter; ?></a></th>
-            <th><?php echo identify_quarter_month($period->period_quarter,3)." ".$period->period_year; ?></th>
-            <td><?php echo $period->month3; ?></td>
-            <td rowspan="3"><?php echo $period->period_average; ?></td>
-            <?php if(!$is_industry_average) : ?><td rowspan="3" class="ranking"><span class="badge badge-<?php echo ranking_css_class($period->ranking); ?>"><?php echo add_ordinal_suffix($period->ranking); ?></span> of 6</td><?php endif; ?>
+            <th><?php echo identify_quarter_month($period->period_quarter,1)." ".$period->period_year; ?></th>
+            <td><?php echo $period->month1; ?></td>
+            <?php if(!$is_industry_average) : ?><td class="ranking"><span class="badge badge-<?php echo ranking_css_class($period->month1_ranking); ?>"><?php echo add_ordinal_suffix($period->month1_ranking); ?></span> of 6</td><?php endif; ?>
           </tr>
           <tr>
             <th><?php echo identify_quarter_month($period->period_quarter,2)." ".$period->period_year; ?></th>
             <td><?php echo $period->month2; ?></td>
+            <?php if(!$is_industry_average) : ?><td class="ranking"><span class="badge badge-<?php echo ranking_css_class($period->month2_ranking); ?>"><?php echo add_ordinal_suffix($period->month2_ranking); ?></span> of 6</td><?php endif; ?>
           </tr>
           <tr>
-            <th><?php echo identify_quarter_month($period->period_quarter,1)." ".$period->period_year; ?></th>
-            <td><?php echo $period->month1; ?></td>
+            <th><?php echo identify_quarter_month($period->period_quarter,3)." ".$period->period_year; ?></th>
+            <td><?php echo $period->month3; ?></td>
+            <?php if(!$is_industry_average) : ?><td class="ranking"><span class="badge badge-<?php echo ranking_css_class($period->month3_ranking); ?>"><?php echo add_ordinal_suffix($period->month3_ranking); ?></span> of 6</td><?php endif; ?>
           </tr>
         <?php endforeach; ?>
       </tbody>
