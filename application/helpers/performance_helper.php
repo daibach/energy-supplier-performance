@@ -48,8 +48,10 @@ if ( ! function_exists('identify_quarter_month')) {
 
     if($format=='long') {
       return date("F", $month_date);
-    } else {
+    } elseif($format=='short') {
       return date("M", $month_date);
+    } else {
+      return date($format, $month_date);
     }
 
   }
