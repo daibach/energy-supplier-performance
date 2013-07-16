@@ -22,7 +22,7 @@
 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="/css/consumer-futures-embed.css" rel="stylesheet">
+    <link href="/css/consumer-futures-embed.css?version=20130716190100" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
