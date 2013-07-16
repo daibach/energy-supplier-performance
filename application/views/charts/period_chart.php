@@ -20,7 +20,6 @@ function drawVisualization() {
     colors: ['#006c78', '#000'],
     chartArea: { width: "85%" },
     legend: 'bottom',
-    fontSize: '10px',
     hAxis: { maxAlternation: 1, minTextSpacing: 0, textStyle: { fontSize: 11 } },
     tooltip: { showColorCode: true }
   };
