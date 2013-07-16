@@ -18,8 +18,11 @@ function drawVisualization() {
     seriesType: "bars",
     series: {1: {type: "line"}},
     colors: ['#006c78', '#000'],
-    height: 400,
-    legend: 'bottom'
+    chartArea: { width: "85%" },
+    legend: 'bottom',
+    fontSize: '10px',
+    hAxis: { maxAlternation: 1, minTextSpacing: 0, textStyle: { fontSize: 11 } },
+    tooltip: { showColorCode: true }
   };
 
   var chart = new google.visualization.ComboChart(document.getElementById('graph'));
