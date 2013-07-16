@@ -57,18 +57,14 @@
           <tr>
             <th class="monthname">Month</th>
             <?php foreach($suppliers as $supplier) : ?>
-              <th><?php echo $supplier->supplier_short_name; ?>
-                <?php if($supplier->supplier_slug == 'scottish-and-southern') : ?><sup>1</sup>
-                <?php elseif($supplier->supplier_slug == 'british-gas') : ?><sup>2</sup>
-                <?php endif; ?>
-              </th>
+              <th class="suppliername"><?php echo $supplier->supplier_short_name; ?><?php if($supplier->supplier_slug == 'scottish-and-southern') : ?><sup>1</sup><?php elseif($supplier->supplier_slug == 'british-gas') : ?><sup>2</sup><?php endif; ?></th>
             <?php endforeach; ?>
           </tr>
         </thead>
         <tbody>
           <?php foreach($historical_period_data as $period) : ?>
             <tr>
-              <th><?php echo $period['month_name']." ".$period['year']; ?></th>
+              <th class="monthname"><?php echo $period['month_name']." ".$period['year']; ?></th>
               <?php foreach($suppliers as $supplier) : ?>
                 <td class="suppliervalue"><?php echo $period['data'][$supplier->id]['value']; ?>
                   <?php if( $supplier->supplier_slug != 'average') : ?>

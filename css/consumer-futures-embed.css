@@ -3,11 +3,14 @@ footer { border-top: #e5e5e5 1px solid; padding: 10px 0; font-size: 0.9em;}
 .container {width: 750px;}
 
 table th span.supplier-includes { font-size: 0.9em; font-weight: normal; }
-.table thead tr th { background: #00414e; color: #fff;}
+.table thead tr th { background: #00414e; color: #fff; font-size: 0.95em;}
+.table thead tr th.suppliername { text-align: center;}
 .table tbody tr.info>th { background-color: #d9edf7; }
 .table tbody tr.success>th { background-color: #dff0d8; }
 .table tbody tr>td.ranking span.badge { font-size: 1.2em; padding: 4px 9px; }
 .table tbody td.casetype { width: 100px; font-weight: bold;}
+.table tbody td.suppliervalue { width: 80px; text-align: center;}
+.table tbody th.monthname { width: 80px;}
 
 span.badge { background: #00414e; }
 span.badgelight { background: #85898E;}
