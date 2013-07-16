@@ -42,8 +42,10 @@ function drawVisualization() {
     legend: 'bottom',
     pointSize: 4,
     curveType: 'none',
-    fontSize: 11,
-    chartArea:{height:300}
+    chartArea: { width: "85%", top: "10%" },
+    hAxis: { maxAlternation: 2, minTextSpacing: 0 },
+    tooltip: { showColorCode: true },
+    titlePosition: 'none'
   };
 
   var chart = new google.visualization.LineChart(document.getElementById('graph'));
