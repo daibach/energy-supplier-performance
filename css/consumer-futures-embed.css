@@ -1,5 +1,7 @@
 body,html {margin: 0; padding: 0; }
 footer { border-top: #e5e5e5 1px solid; padding: 10px 0; font-size: 0.9em;}
+.container {width: 750px;}
+
 table th span.supplier-includes { font-size: 0.9em; font-weight: normal; }
 .table thead tr th { background: #00414e; color: #fff;}
 .table tbody tr.info>th { background-color: #d9edf7; }
