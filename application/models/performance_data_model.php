@@ -37,6 +37,7 @@ class Performance_data_model extends CI_Model {
       case 'month1' : $this->db->order_by('month1 asc, supplier_name'); break;
       case 'month2' : $this->db->order_by('month2 asc, supplier_name'); break;
       case 'month3' : $this->db->order_by('month3 asc, supplier_name'); break;
+      case 'month3_ranking' : $this->db->order_by('supplier_importance desc, month3_ranking asc, month3 asc, supplier_name'); break;
       default: $this->db->order_by('supplier_importance desc, supplier_name');
     }
     $query = $this->db->get('performance_data');
