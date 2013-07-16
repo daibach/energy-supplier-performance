@@ -19,7 +19,7 @@ function drawVisualization() {
 
       //month 2
       echo "[";
-      echo "'Q".$period->period_quarter." (".identify_quarter_month($period->period_quarter,1,'short')." ".$period->period_year.")',";
+      echo "'Q".$period->period_quarter." (".identify_quarter_month($period->period_quarter,2,'short')." ".$period->period_year.")',";
       foreach($suppliers as $k => $s) {
         echo $supplier_data[$k]['supplier_data'][$key]->month2.",";
       }
@@ -27,7 +27,7 @@ function drawVisualization() {
 
       //month 3
       echo "[";
-      echo "'Q".$period->period_quarter." (".identify_quarter_month($period->period_quarter,1,'short')." ".$period->period_year.")',";
+      echo "'Q".$period->period_quarter." (".identify_quarter_month($period->period_quarter,3,'short')." ".$period->period_year.")',";
       foreach($suppliers as $k => $s) {
         echo $supplier_data[$k]['supplier_data'][$key]->month3.",";
       }
