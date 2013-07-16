@@ -11,7 +11,7 @@ class Historical extends ESP_Controller {
 
   public function index()
   {
-
+    $this->_do_cache();
     $this->load->library('ESP_DataFormatter');
 
     $pagedata = array(
@@ -33,6 +33,8 @@ class Historical extends ESP_Controller {
   }
 
   public function view_quarter($year,$quarter) {
+    $this->_do_cache();
+
     $period = $this->periods->find_by_date($year,$quarter);
     if($period) {
 

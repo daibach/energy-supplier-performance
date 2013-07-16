@@ -14,6 +14,7 @@ class Embeds extends ESP_Controller {
   }
 
   public function consumer_futures_latest_data() {
+    $this->_do_cache();
     $latest_period = $this->periods->latest();
 
     if($latest_period) {
@@ -33,6 +34,7 @@ class Embeds extends ESP_Controller {
   }
 
   public function consumer_futures_historical_data() {
+    $this->_do_cache();
     $this->load->library('ESP_DataFormatter');
 
     $data = array(

@@ -11,6 +11,7 @@ class Welcome extends ESP_Controller {
 
   public function index()
   {
+    $this->_do_cache();
 
     $latest_period = $this->periods->latest();
 

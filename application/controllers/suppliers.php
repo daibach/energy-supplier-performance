@@ -11,6 +11,7 @@ class Suppliers extends ESP_Controller {
 
   public function index()
   {
+    $this->_do_cache();
 
     $suppliers = $this->suppliers->all();
 
@@ -35,6 +36,8 @@ class Suppliers extends ESP_Controller {
   }
 
   public function view($slug,$is_industry_average=false) {
+    $this->_do_cache();
+
     $supplier = $this->suppliers->find_by_slug($slug);
     if($supplier) {
 
