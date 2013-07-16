@@ -84,7 +84,7 @@
         <li>Consumer Futures has created a proxy for performance based on the number of consumers 
           that have contacted an independent organisation for advice or support with an energy 
           problem. The companies have been ranked on the number of customer contacts to the Citizens
-          Advice Consumer Service, Consumer Futures and the Energy Ombudsman in relation to their 
+          Advice Consumer Service, Consumer Futures and the Ombudsman Services: Energy in relation to their
           market share during the last quarter</li>
         <li>The different types of complaint have been weighted to reflect the seriousness of the 
           complaint and the time and effort spent by the consumer to get their problem resolved.
